@@ -235,7 +235,7 @@ export default function App() {
 
       <section className="how section" id="how">
         <div className="section-heading"><div><p className="eyebrow">{t.simple}</p><h2>{t.stepsTitle}</h2></div></div>
-        <ol><li><span>01</span><h3>{t.step1}</h3><p>{t.step1Text}</p></li><li><span>02</span><h3>{t.step2}</h3><p>{t.step2Text}</p></li><li><span>03</span><h3>{t.step3}</h3><p>{t.step3Text}</p></li></ol>
+        <ol><li><h3>{t.step1}</h3><p>{t.step1Text}</p></li><li><h3>{t.step2}</h3><p>{t.step2Text}</p></li><li><h3>{t.step3}</h3><p>{t.step3Text}</p></li></ol>
       </section>
 
       <section className="list-company section" id="list-company">
