@@ -110,8 +110,7 @@ h1 { margin: 0; max-width: 900px; font-size: clamp(64px, 9vw, 136px); line-heigh
 .how .section-heading { max-width: 850px; }
 .how ol { list-style: none; margin: 80px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #444; border-left: 1px solid #444; }
 .how li { min-height: 300px; padding: 28px; border-right: 1px solid #444; border-bottom: 1px solid #444; }
-.how li > span { color: #8f939a; font-size: 12px; }
-.how h3 { margin: 110px 0 12px; font-size: 23px; letter-spacing: -.03em; }
+.how h3 { margin: 72px 0 12px; font-size: 23px; letter-spacing: -.03em; }
 .how li p { margin: 0; max-width: 330px; color: #bfc2c8; line-height: 1.6; font-size: 14px; }
 
 .pricing { background: var(--paper); }
@@ -176,7 +175,7 @@ footer > div { display: flex; gap: 22px; font-size: 12px; font-weight: 700; }
   .list-company a { justify-self: start; }
   .how ol { grid-template-columns: 1fr; }
   .how li { min-height: 220px; }
-  .how h3 { margin-top: 70px; }
+  .how h3 { margin-top: 38px; }
   footer { grid-template-columns: 1fr; gap: 22px; padding: 40px 22px; }
 }
 
