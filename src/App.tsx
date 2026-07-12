@@ -15,8 +15,9 @@ const translations = {
     filters: { all: "All", economy: "Economy", suv: "SUV", family: "Family" },
     seats: "seats", automatic: "Automatic", rentalCompany: "Rental company", deposit: "Refundable deposit",
     perDay: "/day", total: "total", view: "View", priceNote: "Taxes and mandatory fees are included in every total shown above.",
+    demoNotice: "Demo listings while we onboard local partners.", representative: "Representative photo", demo: "Demo listing", request: "Request this car", close: "Close",
     knowWho: "Know who you rent from", localCompanies: "Local rental companies", verifiedDetails: "Identity and business details verified",
-    verified: "Verified company", rating: "Rating", completed: "Completed rentals", reply: "Average reply", availableCars: "Available cars", profile: "View company profile",
+    verified: "Demo company", rating: "Rating", completed: "Sample rentals", reply: "Average reply", availableCars: "Sample cars", profile: "View cars",
     simple: "Simple by design", stepsTitle: "Three steps. No counter surprises.",
     step1: "Choose a local company", step1Text: "Compare its real fleet, location, reviews and rental terms.",
     step2: "See the total price", step2Text: "Mandatory taxes and fees are included before you reserve.",
@@ -37,8 +38,9 @@ const translations = {
     filters: { all: "Todos", economy: "Económico", suv: "SUV", family: "Familiar" },
     seats: "asientos", automatic: "Automático", rentalCompany: "Empresa de alquiler", deposit: "Depósito reembolsable",
     perDay: "/día", total: "total", view: "Ver", priceNote: "Los impuestos y cargos obligatorios están incluidos en todos los totales.",
+    demoNotice: "Anuncios de demostración mientras incorporamos socios locales.", representative: "Foto representativa", demo: "Anuncio de demostración", request: "Solicitar este auto", close: "Cerrar",
     knowWho: "Conoce a quien te alquila", localCompanies: "Empresas locales de alquiler", verifiedDetails: "Identidad y datos comerciales verificados",
-    verified: "Empresa verificada", rating: "Calificación", completed: "Alquileres completados", reply: "Respuesta promedio", availableCars: "Autos disponibles", profile: "Ver perfil de la empresa",
+    verified: "Empresa de demostración", rating: "Calificación", completed: "Alquileres de ejemplo", reply: "Respuesta promedio", availableCars: "Autos de ejemplo", profile: "Ver autos",
     simple: "Simple por diseño", stepsTitle: "Tres pasos. Sin sorpresas en el mostrador.",
     step1: "Elige una empresa local", step1Text: "Compara su flota real, ubicación, opiniones y condiciones.",
     step2: "Consulta el precio total", step2Text: "Los impuestos y cargos obligatorios aparecen antes de reservar.",
@@ -59,8 +61,9 @@ const translations = {
     filters: { all: "Все", economy: "Эконом", suv: "SUV", family: "Семейные" },
     seats: "мест", automatic: "Автомат", rentalCompany: "Прокатная компания", deposit: "Возвратный депозит",
     perDay: "/день", total: "итого", view: "Открыть", priceNote: "Налоги и обязательные сборы включены в каждую итоговую цену.",
+    demoNotice: "Демо-объявления, пока мы подключаем местных партнёров.", representative: "Иллюстративное фото", demo: "Демо-объявление", request: "Запросить эту машину", close: "Закрыть",
     knowWho: "Знайте, у кого арендуете", localCompanies: "Местные прокатные компании", verifiedDetails: "Личность и данные компании проверены",
-    verified: "Проверенная компания", rating: "Рейтинг", completed: "Завершённых аренд", reply: "Средний ответ", availableCars: "Доступно машин", profile: "Профиль компании",
+    verified: "Демо-компания", rating: "Рейтинг", completed: "Пример аренд", reply: "Средний ответ", availableCars: "Пример машин", profile: "Смотреть машины",
     simple: "Ничего лишнего", stepsTitle: "Три шага. Никаких сюрпризов на стойке.",
     step1: "Выберите местный прокат", step1Text: "Сравните реальные машины, расположение, отзывы и условия аренды.",
     step2: "Увидьте итоговую цену", step2Text: "Обязательные налоги и сборы включены до бронирования.",
@@ -81,8 +84,9 @@ const translations = {
     filters: { all: "Усі", economy: "Економ", suv: "SUV", family: "Сімейні" },
     seats: "місць", automatic: "Автомат", rentalCompany: "Прокатна компанія", deposit: "Поворотний депозит",
     perDay: "/день", total: "разом", view: "Відкрити", priceNote: "Податки та обов’язкові збори включено в кожну кінцеву ціну.",
+    demoNotice: "Демооголошення, поки ми підключаємо місцевих партнерів.", representative: "Ілюстративне фото", demo: "Демооголошення", request: "Запросити це авто", close: "Закрити",
     knowWho: "Знайте, у кого орендуєте", localCompanies: "Місцеві прокатні компанії", verifiedDetails: "Особу та дані компанії перевірено",
-    verified: "Перевірена компанія", rating: "Рейтинг", completed: "Завершених оренд", reply: "Середня відповідь", availableCars: "Доступно авто", profile: "Профіль компанії",
+    verified: "Демокомпанія", rating: "Рейтинг", completed: "Приклад оренд", reply: "Середня відповідь", availableCars: "Приклад авто", profile: "Дивитися авто",
     simple: "Нічого зайвого", stepsTitle: "Три кроки. Жодних сюрпризів на стійці.",
     step1: "Оберіть місцевий прокат", step1Text: "Порівняйте реальні авто, розташування, відгуки та умови.",
     step2: "Побачте кінцеву ціну", step2Text: "Обов’язкові податки та збори включено до бронювання.",
@@ -103,8 +107,9 @@ const translations = {
     filters: { all: "Toutes", economy: "Économique", suv: "SUV", family: "Familiale" },
     seats: "places", automatic: "Automatique", rentalCompany: "Agence de location", deposit: "Dépôt remboursable",
     perDay: "/jour", total: "total", view: "Voir", priceNote: "Les taxes et frais obligatoires sont inclus dans chaque total affiché.",
+    demoNotice: "Annonces de démonstration pendant l’arrivée de nos partenaires locaux.", representative: "Photo représentative", demo: "Annonce de démonstration", request: "Demander cette voiture", close: "Fermer",
     knowWho: "Sachez auprès de qui vous louez", localCompanies: "Agences de location locales", verifiedDetails: "Identité et informations de l’entreprise vérifiées",
-    verified: "Agence vérifiée", rating: "Note", completed: "Locations terminées", reply: "Réponse moyenne", availableCars: "Voitures disponibles", profile: "Voir le profil de l’agence",
+    verified: "Agence de démonstration", rating: "Note", completed: "Exemples de locations", reply: "Réponse moyenne", availableCars: "Exemples de voitures", profile: "Voir les voitures",
     simple: "Simple par conception", stepsTitle: "Trois étapes. Aucune surprise au comptoir.",
     step1: "Choisissez une agence locale", step1Text: "Comparez sa flotte réelle, son emplacement, ses avis et conditions.",
     step2: "Voyez le prix total", step2Text: "Les taxes et frais obligatoires sont inclus avant la réservation.",
@@ -118,10 +123,10 @@ const translations = {
 } as const;
 
 const cars = [
-  { name: "Chevrolet Aveo", category: "economy" as Category, company: "Maya Drive", location: "Cancún Downtown", seats: 5, total: 116, daily: 29, deposit: 150 },
-  { name: "Nissan Kicks", category: "suv" as Category, company: "Costa Car Rental", location: "Cancún Airport", seats: 5, total: 168, daily: 42, deposit: 200 },
-  { name: "Toyota Avanza", category: "family" as Category, company: "Local Wheels Cancún", location: "Hotel Zone", seats: 7, total: 220, daily: 55, deposit: 250 },
-  { name: "Jeep Renegade", category: "suv" as Category, company: "Maya Drive", location: "Cancún Downtown", seats: 5, total: 236, daily: 59, deposit: 250 },
+  { name: "Chevrolet Aveo", category: "economy" as Category, company: "Maya Drive", location: "Cancún Downtown", seats: 5, total: 116, daily: 29, deposit: 150, image: "/cars/economy.jpg" },
+  { name: "Nissan Kicks", category: "suv" as Category, company: "Costa Car Rental", location: "Cancún Airport", seats: 5, total: 168, daily: 42, deposit: 200, image: "/cars/suv-city.jpg" },
+  { name: "Toyota Avanza", category: "family" as Category, company: "Local Wheels Cancún", location: "Hotel Zone", seats: 7, total: 220, daily: 55, deposit: 250, image: "/cars/family.jpg" },
+  { name: "Jeep Renegade", category: "suv" as Category, company: "Maya Drive", location: "Cancún Downtown", seats: 5, total: 236, daily: 59, deposit: 250, image: "/cars/suv-adventure.jpg" },
 ];
 
 const companies = [
@@ -138,6 +143,7 @@ export default function App() {
   const [category, setCategory] = useState<Category>("all");
   const [location, setLocation] = useState("Cancún, Mexico");
   const [searchedLocation, setSearchedLocation] = useState("Cancún, Mexico");
+  const [selectedCar, setSelectedCar] = useState<(typeof cars)[number] | null>(null);
   const t = translations[lang];
 
   useEffect(() => {
@@ -149,6 +155,14 @@ export default function App() {
     document.documentElement.lang = lang;
     window.localStorage.setItem("car-bookings-language", lang);
   }, [lang]);
+
+  useEffect(() => {
+    if (!selectedCar) return;
+    const close = (event: KeyboardEvent) => event.key === "Escape" && setSelectedCar(null);
+    document.body.classList.add("modal-open");
+    window.addEventListener("keydown", close);
+    return () => { document.body.classList.remove("modal-open"); window.removeEventListener("keydown", close); };
+  }, [selectedCar]);
 
   const filteredCars = useMemo(
     () => cars.filter((car) => category === "all" || car.category === category),
@@ -199,15 +213,16 @@ export default function App() {
         <div className="filters" aria-label={t.ariaFilters}>
           {filterKeys.map((filter) => <button className={category === filter ? "active" : ""} key={filter} type="button" onClick={() => setCategory(filter)} aria-pressed={category === filter}>{t.filters[filter]}</button>)}
         </div>
+        <p className="demo-notice"><span>DEMO</span>{t.demoNotice}</p>
         <div className="car-list">
           {filteredCars.map((car) => (
             <article className="car-row" key={car.name}>
-              <div className="car-index" aria-hidden="true">{String(cars.indexOf(car) + 1).padStart(2, "0")}</div>
+              <div className="car-photo"><img src={car.image} alt="" loading="lazy" /><span>{t.representative}</span></div>
               <div className="car-name"><p>{t.filters[car.category]}</p><h3>{car.name}</h3><span>{car.seats} {t.seats} · {t.automatic}</span></div>
               <div className="car-company"><span>{t.rentalCompany}</span><a href="#companies">{car.company}</a><small>{car.location}</small></div>
               <div className="car-deposit"><span>{t.deposit}</span><strong>${car.deposit}</strong></div>
               <div className="car-price"><span>${car.daily}{t.perDay}</span><strong>${car.total} {t.total}</strong></div>
-              <button className="view-button" type="button" aria-label={`${t.view} ${car.name}`}>{t.view}</button>
+              <button className="view-button" type="button" onClick={() => setSelectedCar(car)} aria-label={`${t.view} ${car.name}`}>{t.view}</button>
             </article>
           ))}
         </div>
@@ -253,7 +268,22 @@ export default function App() {
         <a className="brand" href="#top">CAR BOOKINGS<span>.</span></a><p>{t.footerLine}</p>
         <div><a href="#cars">{t.findCar}</a><a href="#list-company">{t.forCompanies}</a><a href="mailto:hello@car-bookings.com">{t.contact}</a></div><small>© 2026 Car Bookings</small>
       </footer>
+
+      {selectedCar && (
+        <div className="modal-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setSelectedCar(null)}>
+          <section className="car-modal" role="dialog" aria-modal="true" aria-labelledby="car-modal-title">
+            <button className="modal-close" type="button" onClick={() => setSelectedCar(null)} aria-label={t.close}>×</button>
+            <div className="modal-photo"><img src={selectedCar.image} alt="" /><span>{t.representative} · {t.demo}</span></div>
+            <div className="modal-content">
+              <p className="eyebrow">{t.filters[selectedCar.category]}</p><h2 id="car-modal-title">{selectedCar.name}</h2>
+              <p className="modal-company">{selectedCar.company} · {selectedCar.location}</p>
+              <div className="modal-specs"><span>{selectedCar.seats} {t.seats}</span><span>{t.automatic}</span><span>{t.deposit}: ${selectedCar.deposit}</span></div>
+              <div className="modal-total"><span>${selectedCar.daily}{t.perDay}</span><strong>${selectedCar.total} {t.total}</strong></div>
+              <a className="request-button" href={`mailto:partners@car-bookings.com?subject=${encodeURIComponent(`Car request: ${selectedCar.name}`)}`}>{t.request}<span>→</span></a>
+            </div>
+          </section>
+        </div>
+      )}
     </main>
   );
 }
-
