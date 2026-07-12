@@ -6,7 +6,7 @@ type Category = "all" | "economy" | "suv" | "family";
 
 const translations = {
   en: {
-    navCars: "Cars", navCompanies: "Rental companies", navHow: "How it works", navPricing: "Pricing", listCompany: "List your company",
+    navCars: "Cars", navCompanies: "Rental companies", navHow: "How it works", listCompany: "List your company",
     heroEyebrow: "Independent car rentals", heroLine1: "Local cars.", heroLine2: "Real prices.",
     heroNote: "Compare verified local rental companies. The price you see is the price you pay.",
     location: "Location", pickup: "Pick-up", dropoff: "Drop-off", findCar: "Find a car",
@@ -22,14 +22,12 @@ const translations = {
     step1: "Choose a local company", step1Text: "Compare its real fleet, location, reviews and rental terms.",
     step2: "See the total price", step2Text: "Mandatory taxes and fees are included before you reserve.",
     step3: "Book the actual car", step3Text: "Confirm directly with the company and receive exact pickup details.",
-    forBusiness: "For independent rental businesses", businessTitle: "Put your real cars in front of real customers.",
-    pricingEyebrow: "Launch offer for rental companies", pricingTitle: "Your first 6 months are free.", pricingNote: "List your company and its entire fleet at no cost. After the first six months, placement is $50 per month.",
-    offerName: "Company listing", offerPrice: "$50", monthly: "/month after 6 free months", offer1: "Unlimited vehicles", offer2: "Full company profile", offer3: "Direct customer inquiries", startFree: "Start free", launchLabel: "6 months free",
+    forBusiness: "For independent rental businesses", businessTitle: "List your company and cars for free.",
     footerLine: "Independent rentals. Transparent prices.", forCompanies: "For companies", contact: "Contact",
     ariaNav: "Main navigation", ariaLanguage: "Language", ariaBenefits: "Booking benefits", ariaFilters: "Filter by vehicle type",
   },
   es: {
-    navCars: "Autos", navCompanies: "Empresas de alquiler", navHow: "Cómo funciona", navPricing: "Planes", listCompany: "Publica tu empresa",
+    navCars: "Autos", navCompanies: "Empresas de alquiler", navHow: "Cómo funciona", listCompany: "Publica tu empresa",
     heroEyebrow: "Alquileres de autos independientes", heroLine1: "Autos locales.", heroLine2: "Precios reales.",
     heroNote: "Compara empresas locales verificadas. El precio que ves es el precio que pagas.",
     location: "Ubicación", pickup: "Recogida", dropoff: "Devolución", findCar: "Buscar auto",
@@ -45,14 +43,12 @@ const translations = {
     step1: "Elige una empresa local", step1Text: "Compara su flota real, ubicación, opiniones y condiciones.",
     step2: "Consulta el precio total", step2Text: "Los impuestos y cargos obligatorios aparecen antes de reservar.",
     step3: "Reserva el auto real", step3Text: "Confirma directamente y recibe los detalles exactos de recogida.",
-    forBusiness: "Para empresas de alquiler independientes", businessTitle: "Muestra tus autos reales a clientes reales.",
-    pricingEyebrow: "Oferta de lanzamiento para empresas", pricingTitle: "Tus primeros 6 meses son gratis.", pricingNote: "Publica tu empresa y toda su flota sin costo. Después de los primeros seis meses, la publicación cuesta $50 al mes.",
-    offerName: "Publicación de empresa", offerPrice: "$50", monthly: "/mes después de 6 meses gratis", offer1: "Autos ilimitados", offer2: "Perfil completo de empresa", offer3: "Consultas directas de clientes", startFree: "Empezar gratis", launchLabel: "6 meses gratis",
+    forBusiness: "Para empresas de alquiler independientes", businessTitle: "Publica tu empresa y tus autos gratis.",
     footerLine: "Alquileres independientes. Precios transparentes.", forCompanies: "Para empresas", contact: "Contacto",
     ariaNav: "Navegación principal", ariaLanguage: "Idioma", ariaBenefits: "Ventajas de la reserva", ariaFilters: "Filtrar por tipo de vehículo",
   },
   ru: {
-    navCars: "Автомобили", navCompanies: "Прокатные компании", navHow: "Как это работает", navPricing: "Тарифы", listCompany: "Добавить компанию",
+    navCars: "Автомобили", navCompanies: "Прокатные компании", navHow: "Как это работает", listCompany: "Добавить компанию",
     heroEyebrow: "Независимые прокаты автомобилей", heroLine1: "Местные машины.", heroLine2: "Реальные цены.",
     heroNote: "Сравнивайте проверенные местные прокаты. Цена на экране — это цена, которую вы платите.",
     location: "Место", pickup: "Получение", dropoff: "Возврат", findCar: "Найти машину",
@@ -68,14 +64,12 @@ const translations = {
     step1: "Выберите местный прокат", step1Text: "Сравните реальные машины, расположение, отзывы и условия аренды.",
     step2: "Увидьте итоговую цену", step2Text: "Обязательные налоги и сборы включены до бронирования.",
     step3: "Забронируйте конкретную машину", step3Text: "Подтвердите аренду напрямую и получите точные инструкции.",
-    forBusiness: "Для независимых прокатных компаний", businessTitle: "Покажите реальные машины реальным клиентам.",
-    pricingEyebrow: "Стартовое предложение для прокатов", pricingTitle: "Первые 6 месяцев бесплатно.", pricingNote: "Разместите компанию и весь автопарк бесплатно. После первых шести месяцев размещение стоит $50 в месяц.",
-    offerName: "Размещение компании", offerPrice: "$50", monthly: "/месяц после 6 бесплатных месяцев", offer1: "Неограниченное количество машин", offer2: "Полный профиль компании", offer3: "Прямые обращения клиентов", startFree: "Начать бесплатно", launchLabel: "6 месяцев бесплатно",
+    forBusiness: "Для независимых прокатных компаний", businessTitle: "Разместите компанию и автомобили бесплатно.",
     footerLine: "Независимые прокаты. Прозрачные цены.", forCompanies: "Для компаний", contact: "Контакты",
     ariaNav: "Главное меню", ariaLanguage: "Язык", ariaBenefits: "Преимущества бронирования", ariaFilters: "Фильтр по типу автомобиля",
   },
   uk: {
-    navCars: "Автомобілі", navCompanies: "Прокатні компанії", navHow: "Як це працює", navPricing: "Тарифи", listCompany: "Додати компанію",
+    navCars: "Автомобілі", navCompanies: "Прокатні компанії", navHow: "Як це працює", listCompany: "Додати компанію",
     heroEyebrow: "Незалежні прокати автомобілів", heroLine1: "Місцеві авто.", heroLine2: "Реальні ціни.",
     heroNote: "Порівнюйте перевірені місцеві прокати. Ціна на екрані — це ціна, яку ви сплачуєте.",
     location: "Місце", pickup: "Отримання", dropoff: "Повернення", findCar: "Знайти авто",
@@ -91,14 +85,12 @@ const translations = {
     step1: "Оберіть місцевий прокат", step1Text: "Порівняйте реальні авто, розташування, відгуки та умови.",
     step2: "Побачте кінцеву ціну", step2Text: "Обов’язкові податки та збори включено до бронювання.",
     step3: "Забронюйте конкретне авто", step3Text: "Підтвердьте оренду напряму й отримайте точні інструкції.",
-    forBusiness: "Для незалежних прокатних компаній", businessTitle: "Покажіть реальні авто реальним клієнтам.",
-    pricingEyebrow: "Стартова пропозиція для прокатів", pricingTitle: "Перші 6 місяців безкоштовно.", pricingNote: "Розмістіть компанію та весь автопарк безкоштовно. Після перших шести місяців розміщення коштує $50 на місяць.",
-    offerName: "Розміщення компанії", offerPrice: "$50", monthly: "/місяць після 6 безкоштовних місяців", offer1: "Необмежена кількість авто", offer2: "Повний профіль компанії", offer3: "Прямі звернення клієнтів", startFree: "Почати безкоштовно", launchLabel: "6 місяців безкоштовно",
+    forBusiness: "Для незалежних прокатних компаній", businessTitle: "Розмістіть компанію та автомобілі безкоштовно.",
     footerLine: "Незалежні прокати. Прозорі ціни.", forCompanies: "Для компаній", contact: "Контакти",
     ariaNav: "Головне меню", ariaLanguage: "Мова", ariaBenefits: "Переваги бронювання", ariaFilters: "Фільтр за типом автомобіля",
   },
   fr: {
-    navCars: "Voitures", navCompanies: "Agences de location", navHow: "Comment ça marche", navPricing: "Tarifs", listCompany: "Ajouter votre agence",
+    navCars: "Voitures", navCompanies: "Agences de location", navHow: "Comment ça marche", listCompany: "Ajouter votre agence",
     heroEyebrow: "Locations de voitures indépendantes", heroLine1: "Voitures locales.", heroLine2: "Prix réels.",
     heroNote: "Comparez des agences locales vérifiées. Le prix affiché est le prix payé.",
     location: "Lieu", pickup: "Prise en charge", dropoff: "Retour", findCar: "Trouver une voiture",
@@ -114,9 +106,7 @@ const translations = {
     step1: "Choisissez une agence locale", step1Text: "Comparez sa flotte réelle, son emplacement, ses avis et conditions.",
     step2: "Voyez le prix total", step2Text: "Les taxes et frais obligatoires sont inclus avant la réservation.",
     step3: "Réservez la voiture réelle", step3Text: "Confirmez directement et recevez les détails précis de prise en charge.",
-    forBusiness: "Pour les agences indépendantes", businessTitle: "Présentez vos vraies voitures à de vrais clients.",
-    pricingEyebrow: "Offre de lancement pour les agences", pricingTitle: "Vos 6 premiers mois sont gratuits.", pricingNote: "Publiez votre agence et toute sa flotte gratuitement. Après les six premiers mois, la publication coûte 50 $ par mois.",
-    offerName: "Publication de l’agence", offerPrice: "$50", monthly: "/mois après 6 mois gratuits", offer1: "Voitures illimitées", offer2: "Profil complet de l’agence", offer3: "Demandes directes des clients", startFree: "Commencer gratuitement", launchLabel: "6 mois gratuits",
+    forBusiness: "Pour les agences indépendantes", businessTitle: "Publiez votre agence et vos voitures gratuitement.",
     footerLine: "Locations indépendantes. Prix transparents.", forCompanies: "Pour les agences", contact: "Contact",
     ariaNav: "Navigation principale", ariaLanguage: "Langue", ariaBenefits: "Avantages de la réservation", ariaFilters: "Filtrer par type de véhicule",
   },
@@ -180,7 +170,7 @@ export default function App() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Car Bookings">CAR BOOKINGS<span>.</span></a>
         <nav aria-label={t.ariaNav}>
-          <a href="#cars">{t.navCars}</a><a href="#companies">{t.navCompanies}</a><a href="#pricing">{t.navPricing}</a><a href="#how">{t.navHow}</a>
+          <a href="#cars">{t.navCars}</a><a href="#companies">{t.navCompanies}</a><a href="#how">{t.navHow}</a>
         </nav>
         <div className="header-actions">
           <label className="language-select">
@@ -246,18 +236,6 @@ export default function App() {
       <section className="how section" id="how">
         <div className="section-heading"><div><p className="eyebrow">{t.simple}</p><h2>{t.stepsTitle}</h2></div></div>
         <ol><li><span>01</span><h3>{t.step1}</h3><p>{t.step1Text}</p></li><li><span>02</span><h3>{t.step2}</h3><p>{t.step2Text}</p></li><li><span>03</span><h3>{t.step3}</h3><p>{t.step3Text}</p></li></ol>
-      </section>
-
-      <section className="pricing section" id="pricing">
-        <div className="section-heading">
-          <div><p className="eyebrow">{t.pricingEyebrow}</p><h2>{t.pricingTitle}</h2></div>
-          <p>{t.pricingNote}</p>
-        </div>
-        <article className="launch-offer">
-          <div className="offer-price-block"><p className="plan-name">{t.offerName}</p><p className="plan-price">{t.offerPrice}</p><p className="offer-period">{t.monthly}</p></div>
-          <div className="offer-details"><p className="launch-label">{t.launchLabel}</p><ul><li>{t.offer1}</li><li>{t.offer2}</li><li>{t.offer3}</li></ul></div>
-          <a href="mailto:partners@car-bookings.com?subject=6%20months%20free">{t.startFree}<span>→</span></a>
-        </article>
       </section>
 
       <section className="list-company section" id="list-company">
