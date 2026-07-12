@@ -17,3 +17,7 @@ npm run build
 
 The project is a standard Vite + React + TypeScript app and can be opened in Replit or any local development environment.
 
+
+## Deployment
+
+Every push to `main` is deployed automatically through GitHub Pages.
