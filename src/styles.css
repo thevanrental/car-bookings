@@ -10,6 +10,8 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif; }
+body.modal-open { overflow: hidden; }
+img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button, input { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -56,9 +58,16 @@ h1 { margin: 0; max-width: 900px; font-size: clamp(64px, 9vw, 136px); line-heigh
 .filters { display: flex; gap: 8px; margin-bottom: 24px; }
 .filters button { border: 1px solid var(--ink); background: transparent; padding: 10px 18px; font-size: 13px; font-weight: 700; cursor: pointer; }
 .filters button.active, .filters button:hover, .filters button:focus-visible { background: var(--ink); color: white; }
-.car-list { border-top: 1px solid var(--ink); }
-.car-row { display: grid; grid-template-columns: 52px 1.5fr 1.15fr .8fr .75fr 86px; align-items: center; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); }
-.car-index { color: var(--muted); font-size: 12px; }
+.demo-notice { display: flex; align-items: center; gap: 10px; margin: 0 0 20px; color: var(--muted); font-size: 13px; }
+.demo-notice span { padding: 5px 7px; background: #fff0bf; color: #654800; font-size: 10px; font-weight: 900; letter-spacing: .1em; }
+.car-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.car-row { min-width: 0; display: grid; grid-template-columns: 1fr auto; gap: 20px; padding: 0 0 24px; border: 1px solid var(--ink); background: white; overflow: hidden; }
+.car-photo { grid-column: 1/-1; position: relative; aspect-ratio: 16/9; overflow: hidden; background: #e7e8eb; }
+.car-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 400ms ease; }
+.car-row:hover .car-photo img { transform: scale(1.025); }
+.car-photo span, .modal-photo span { position: absolute; left: 12px; bottom: 12px; padding: 6px 8px; background: rgba(12,13,14,.78); color: white; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.car-name, .car-company, .car-deposit { margin-left: 22px; }
+.car-price, .view-button { margin-right: 22px; }
 .car-name p, .verified { margin: 0 0 8px; color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .car-name h3, .company-card h3 { margin: 0; font-size: 24px; letter-spacing: -.03em; }
 .car-name span, .car-company small { display: block; margin-top: 7px; color: var(--muted); font-size: 13px; }
@@ -70,6 +79,21 @@ h1 { margin: 0; max-width: 900px; font-size: clamp(64px, 9vw, 136px); line-heigh
 .view-button { min-height: 44px; border: 1px solid var(--ink); background: transparent; font-weight: 700; cursor: pointer; }
 .view-button:hover, .view-button:focus-visible { background: var(--blue); color: white; border-color: var(--blue); }
 .price-note { margin: 20px 0 0; color: var(--muted); font-size: 12px; }
+
+.modal-backdrop { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 24px; background: rgba(5,6,8,.72); }
+.car-modal { position: relative; width: min(940px, 100%); max-height: calc(100vh - 48px); overflow: auto; display: grid; grid-template-columns: 1.15fr 1fr; background: white; box-shadow: 0 30px 80px rgba(0,0,0,.32); }
+.modal-close { position: absolute; z-index: 2; top: 12px; right: 12px; width: 42px; height: 42px; border: 0; background: white; color: var(--ink); font-size: 27px; cursor: pointer; }
+.modal-photo { position: relative; min-height: 520px; background: var(--soft); }
+.modal-photo img { width: 100%; height: 100%; object-fit: cover; }
+.modal-content { display: flex; flex-direction: column; padding: 66px 42px 42px; }
+.modal-content h2 { margin: 12px 0 8px; font-size: clamp(38px, 5vw, 66px); line-height: .95; letter-spacing: -.055em; }
+.modal-company { margin: 0; color: var(--muted); }
+.modal-specs { display: grid; gap: 0; margin: 38px 0; border-top: 1px solid var(--line); }
+.modal-specs span { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.modal-total { margin-top: auto; }
+.modal-total span { display: block; color: var(--muted); font-size: 13px; }
+.modal-total strong { display: block; margin-top: 5px; font-size: 28px; }
+.request-button { display: flex; justify-content: space-between; margin-top: 22px; padding: 18px 20px; background: var(--blue); color: white; font-weight: 800; }
 
 .company-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
 .company-card { min-width: 0; padding: 30px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
@@ -115,8 +139,7 @@ footer p, footer small { margin: 0; color: var(--muted); font-size: 12px; }
 footer > div { display: flex; gap: 22px; font-size: 12px; font-weight: 700; }
 
 @media (max-width: 980px) {
-  .car-row { grid-template-columns: 42px 1.4fr 1fr .7fr 74px; }
-  .car-deposit { display: none; }
+  .car-list { grid-template-columns: 1fr; }
   .company-grid { grid-template-columns: 1fr; }
   .launch-offer { grid-template-columns: 1fr; }
   .offer-price-block, .offer-details { border-right: 0; border-bottom: 1px solid var(--ink); }
@@ -141,10 +164,14 @@ footer > div { display: flex; gap: 22px; font-size: 12px; font-weight: 700; }
   .section-heading { align-items: start; flex-direction: column; margin-bottom: 38px; }
   .filters { overflow-x: auto; padding-bottom: 4px; }
   .filters button { flex: 0 0 auto; }
-  .car-row { grid-template-columns: 32px 1fr auto; gap: 14px; padding: 22px 0; }
-  .car-company { grid-column: 2/4; }
-  .car-price { grid-column: 2; text-align: left; }
-  .view-button { grid-column: 3; grid-row: 3; padding: 0 20px; }
+  .car-row { grid-template-columns: 1fr auto; gap: 14px; padding-bottom: 20px; }
+  .car-company { grid-column: 1/3; }
+  .car-deposit { display: none; }
+  .car-price { grid-column: 1; text-align: left; margin-left: 22px; }
+  .view-button { grid-column: 2; grid-row: 4; padding: 0 20px; }
+  .car-modal { grid-template-columns: 1fr; }
+  .modal-photo { min-height: 260px; aspect-ratio: 16/10; }
+  .modal-content { padding: 38px 24px 26px; }
   .list-company > div { grid-template-columns: 1fr; }
   .list-company a { justify-self: start; }
   .how ol { grid-template-columns: 1fr; }
@@ -157,4 +184,3 @@ footer > div { display: flex; gap: 22px; font-size: 12px; font-weight: 700; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
-
