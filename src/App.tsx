@@ -244,7 +244,8 @@ export default function App() {
 
       <footer>
         <a className="brand" href="#top">CAR BOOKINGS<span>.</span></a><p>{t.footerLine}</p>
-        <div><a href="#cars">{t.findCar}</a><a href="#list-company">{t.forCompanies}</a><a href="mailto:hello@car-bookings.com">{t.contact}</a></div><small>© 2026 Car Bookings</small>
+        <div><a href="#cars">{t.findCar}</a><a href="#list-company">{t.forCompanies}</a><a href="mailto:partners@car-bookings.com">Email</a><a href="https://wa.me/13236107634" target="_blank" rel="noreferrer">WhatsApp</a></div>
+        <small>© 2026 Car Bookings. All rights reserved. Car Bookings is operated by Gavrilkoff LLC.</small>
       </footer>
 
       {selectedCar && (
