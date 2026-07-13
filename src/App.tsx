@@ -6,7 +6,7 @@ type Lang = "en" | "es" | "ru" | "uk" | "fr";
 const translations = {
   en: {
     navCars: "Cars", navCompanies: "Rental companies", navHow: "How it works", listCompany: "List your company",
-    heroEyebrow: "Independent car rentals", heroLine1: "Local cars.", heroLine2: "Real prices.",
+    heroEyebrow: "Independent car rentals", heroLine1: "Local cars", heroLine2: "Real prices",
     heroNote: "Choose a city and compare independent local rentals as new partners join the platform.",
     location: "Location", pickup: "Pick-up", dropoff: "Drop-off", findCar: "Find a car",
     benefit1: "No hidden counter fees", benefit2: "Local companies only", benefit3: "Final price shown upfront",
@@ -27,7 +27,7 @@ const translations = {
   },
   es: {
     navCars: "Autos", navCompanies: "Empresas de alquiler", navHow: "Cómo funciona", listCompany: "Publica tu empresa",
-    heroEyebrow: "Alquileres de autos independientes", heroLine1: "Autos locales.", heroLine2: "Precios reales.",
+    heroEyebrow: "Alquileres de autos independientes", heroLine1: "Autos locales", heroLine2: "Precios reales",
     heroNote: "Elige una ciudad y compara alquileres locales independientes a medida que se suman nuevos socios.",
     location: "Ubicación", pickup: "Recogida", dropoff: "Devolución", findCar: "Buscar auto",
     benefit1: "Sin cargos ocultos", benefit2: "Solo empresas locales", benefit3: "Precio final por adelantado",
@@ -48,7 +48,7 @@ const translations = {
   },
   ru: {
     navCars: "Автомобили", navCompanies: "Прокатные компании", navHow: "Как это работает", listCompany: "Добавить компанию",
-    heroEyebrow: "Независимые прокаты автомобилей", heroLine1: "Местные машины.", heroLine2: "Реальные цены.",
+    heroEyebrow: "Независимые прокаты автомобилей", heroLine1: "Местные машины", heroLine2: "Реальные цены",
     heroNote: "Выберите город и сравнивайте независимые местные прокаты по мере подключения новых партнёров.",
     location: "Место", pickup: "Получение", dropoff: "Возврат", findCar: "Найти машину",
     benefit1: "Без скрытых сборов", benefit2: "Только местные компании", benefit3: "Итоговая цена сразу",
@@ -69,7 +69,7 @@ const translations = {
   },
   uk: {
     navCars: "Автомобілі", navCompanies: "Прокатні компанії", navHow: "Як це працює", listCompany: "Додати компанію",
-    heroEyebrow: "Незалежні прокати автомобілів", heroLine1: "Місцеві авто.", heroLine2: "Реальні ціни.",
+    heroEyebrow: "Незалежні прокати автомобілів", heroLine1: "Місцеві авто", heroLine2: "Реальні ціни",
     heroNote: "Оберіть місто та порівнюйте незалежні місцеві прокати в міру підключення нових партнерів.",
     location: "Місце", pickup: "Отримання", dropoff: "Повернення", findCar: "Знайти авто",
     benefit1: "Без прихованих зборів", benefit2: "Лише місцеві компанії", benefit3: "Кінцева ціна одразу",
@@ -90,7 +90,7 @@ const translations = {
   },
   fr: {
     navCars: "Voitures", navCompanies: "Agences de location", navHow: "Comment ça marche", listCompany: "Ajouter votre agence",
-    heroEyebrow: "Locations de voitures indépendantes", heroLine1: "Voitures locales.", heroLine2: "Prix réels.",
+    heroEyebrow: "Locations de voitures indépendantes", heroLine1: "Voitures locales", heroLine2: "Prix réels",
     heroNote: "Choisissez une ville et comparez les locations locales indépendantes à mesure que de nouveaux partenaires nous rejoignent.",
     location: "Lieu", pickup: "Prise en charge", dropoff: "Retour", findCar: "Trouver une voiture",
     benefit1: "Aucun frais caché", benefit2: "Agences locales uniquement", benefit3: "Prix final affiché dès le départ",
@@ -155,7 +155,7 @@ export default function App() {
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Car Bookings">CAR BOOKINGS<span>.</span></a>
+        <a className="brand" href="#top" aria-label="Car Bookings">CAR BOOKINGS</a>
         <nav aria-label={t.ariaNav}>
           <a href="#cars">{t.navCars}</a><a href="#about">{a.navAbout}</a><a href="#how">{t.navHow}</a>
         </nav>
@@ -207,7 +207,7 @@ export default function App() {
 
 
       <footer>
-        <a className="brand" href="#top">CAR BOOKINGS<span>.</span></a><p>{t.footerLine}</p>
+        <a className="brand" href="#top">CAR BOOKINGS</a><p>{t.footerLine}</p>
         <div><a href="#cars">{t.findCar}</a><a href="#about">{a.navAbout}</a><a href="mailto:partners@car-bookings.com">Email</a><a href="https://wa.me/13236107634" target="_blank" rel="noreferrer">WhatsApp</a></div>
         <small>© 2026 Car Bookings. All rights reserved. Car Bookings is operated by Gavrilkoff LLC.</small>
       </footer>
