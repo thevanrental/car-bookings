@@ -112,15 +112,15 @@ const translations = {
 } as const;
 
 
-const managementCopy: Record<Lang, {
-  navOwners: string; searchTitle: string; searchText: string; ownerEyebrow: string; ownerTitle: string;
-  ownerText: string; areaLabel: string; areaText: string; service1: string; service2: string; service3: string; ownerCta: string;
+const aboutCopy: Record<Lang, {
+  navAbout: string; searchTitle: string; searchText: string; aboutEyebrow: string; aboutTitle: string; aboutText: string;
+  missionLabel: string; missionText: string; since: string; trips: string; rating: string; fleet: string; allStar: string;
 }> = {
-  en: { navOwners: "For car owners", searchTitle: "Local cars are coming soon.", searchText: "We are onboarding independent cars and rental partners in this location.", ownerEyebrow: "Car management in Southern California", ownerTitle: "Have a car? Let us manage it.", ownerText: "We accept vehicles throughout Los Angeles and Orange County. We handle the listing, customer communication and day-to-day rental coordination.", areaLabel: "Service area", areaText: "Los Angeles · Orange County", service1: "Listing and customer inquiries", service2: "Booking coordination", service3: "Transparent owner communication", ownerCta: "Offer your car" },
-  es: { navOwners: "Para propietarios", searchTitle: "Próximamente: autos locales.", searchText: "Estamos incorporando autos y socios de alquiler independientes en esta ubicación.", ownerEyebrow: "Gestión de autos en el sur de California", ownerTitle: "¿Tienes un auto? Nosotros lo gestionamos.", ownerText: "Aceptamos vehículos en Los Ángeles y Orange County. Gestionamos la publicación, la comunicación con clientes y la coordinación diaria del alquiler.", areaLabel: "Área de servicio", areaText: "Los Ángeles · Orange County", service1: "Publicación y consultas", service2: "Coordinación de reservas", service3: "Comunicación transparente", ownerCta: "Ofrecer mi auto" },
-  ru: { navOwners: "Владельцам авто", searchTitle: "Местные автомобили скоро появятся.", searchText: "Мы подключаем частные автомобили и независимые прокаты в этом городе.", ownerEyebrow: "Управление автомобилями в Южной Калифорнии", ownerTitle: "Есть автомобиль? Передайте его нам в управление.", ownerText: "Мы принимаем автомобили по всему Лос-Анджелесу и Orange County. Берём на себя размещение, общение с клиентами и ежедневную координацию аренды.", areaLabel: "Зона работы", areaText: "Лос-Анджелес · Orange County", service1: "Размещение и обращения клиентов", service2: "Координация бронирований", service3: "Прозрачная связь с владельцем", ownerCta: "Предложить автомобиль" },
-  uk: { navOwners: "Власникам авто", searchTitle: "Місцеві автомобілі скоро з’являться.", searchText: "Ми підключаємо приватні авто та незалежні прокати в цьому місті.", ownerEyebrow: "Управління автомобілями в Південній Каліфорнії", ownerTitle: "Є автомобіль? Передайте його нам в управління.", ownerText: "Ми приймаємо автомобілі по всьому Лос-Анджелесу й Orange County. Беремо на себе розміщення, спілкування з клієнтами та координацію оренди.", areaLabel: "Зона роботи", areaText: "Лос-Анджелес · Orange County", service1: "Розміщення та звернення клієнтів", service2: "Координація бронювань", service3: "Прозорий зв’язок із власником", ownerCta: "Запропонувати автомобіль" },
-  fr: { navOwners: "Pour les propriétaires", searchTitle: "Les voitures locales arrivent bientôt.", searchText: "Nous intégrons des voitures et partenaires de location indépendants dans cette ville.", ownerEyebrow: "Gestion automobile en Californie du Sud", ownerTitle: "Vous avez une voiture ? Confiez-nous sa gestion.", ownerText: "Nous acceptons des véhicules dans tout Los Angeles et Orange County. Nous gérons l’annonce, les échanges clients et la coordination quotidienne des locations.", areaLabel: "Zone desservie", areaText: "Los Angeles · Orange County", service1: "Annonce et demandes clients", service2: "Coordination des réservations", service3: "Communication transparente", ownerCta: "Proposer ma voiture" },
+  en: { navAbout: "About", searchTitle: "Local cars are coming soon.", searchText: "We are onboarding independent cars and rental partners in this location.", aboutEyebrow: "Built from real rental experience", aboutTitle: "In the car business since 2017.", aboutText: "Car Bookings was founded by Konstantin Gavrilkoff after building and managing rental fleets in Russia and the United States. The platform is based on real experience with cars, customers and hundreds of completed rentals.", missionLabel: "Our mission", missionText: "Make car rental more honest, simple and human — with reliable local operators, clear terms and transparent prices.", since: "Years in the car business · since 2017", trips: "Turo trips since 2023", rating: "Guest rating", fleet: "Vehicles in current fleet", allStar: "All-Star Host" },
+  es: { navAbout: "Nosotros", searchTitle: "Próximamente: autos locales.", searchText: "Estamos incorporando autos y socios de alquiler independientes en esta ubicación.", aboutEyebrow: "Creado desde la experiencia real", aboutTitle: "En el negocio automotriz desde 2017.", aboutText: "Car Bookings fue fundada por Konstantin Gavrilkoff después de crear y gestionar flotas de alquiler en Rusia y Estados Unidos. La plataforma se basa en experiencia real con autos, clientes y cientos de alquileres completados.", missionLabel: "Nuestra misión", missionText: "Hacer el alquiler de autos más honesto, sencillo y humano, con operadores locales confiables, condiciones claras y precios transparentes.", since: "Años en el negocio automotriz · desde 2017", trips: "Viajes en Turo desde 2023", rating: "Calificación", fleet: "Autos en la flota actual", allStar: "All-Star Host" },
+  ru: { navAbout: "О нас", searchTitle: "Местные автомобили скоро появятся.", searchText: "Мы подключаем частные автомобили и независимые прокаты в этом городе.", aboutEyebrow: "Основано на реальном опыте аренды", aboutTitle: "В автомобильном бизнесе с 2017 года.", aboutText: "Car Bookings основал Константин Гаврилков после создания и управления автопарками в России и США. В основе платформы — реальный опыт работы с автомобилями, клиентами и сотнями завершённых аренд.", missionLabel: "Наша миссия", missionText: "Сделать аренду автомобилей честнее, проще и человечнее — с надёжными местными компаниями, понятными условиями и прозрачными ценами.", since: "Лет в автомобильном бизнесе · с 2017 года", trips: "Поездок на Turo с 2023 года", rating: "Рейтинг гостей", fleet: "Автомобилей в текущем парке", allStar: "All-Star Host" },
+  uk: { navAbout: "Про нас", searchTitle: "Місцеві автомобілі скоро з’являться.", searchText: "Ми підключаємо приватні авто та незалежні прокати в цьому місті.", aboutEyebrow: "Засновано на реальному досвіді оренди", aboutTitle: "В автомобільному бізнесі з 2017 року.", aboutText: "Car Bookings заснував Костянтин Гаврилков після створення та управління автопарками в Росії й США. В основі платформи — реальний досвід роботи з автомобілями, клієнтами та сотнями завершених оренд.", missionLabel: "Наша місія", missionText: "Зробити оренду автомобілів чеснішою, простішою та людянішою — з надійними місцевими компаніями, зрозумілими умовами й прозорими цінами.", since: "Років в автомобільному бізнесі · з 2017 року", trips: "Поїздок на Turo з 2023 року", rating: "Рейтинг гостей", fleet: "Автомобілів у поточному парку", allStar: "All-Star Host" },
+  fr: { navAbout: "À propos", searchTitle: "Les voitures locales arrivent bientôt.", searchText: "Nous intégrons des voitures et partenaires de location indépendants dans cette ville.", aboutEyebrow: "Fondé sur une véritable expérience", aboutTitle: "Dans l’automobile depuis 2017.", aboutText: "Car Bookings a été fondé par Konstantin Gavrilkoff après avoir créé et géré des flottes de location en Russie et aux États-Unis. La plateforme repose sur une expérience réelle des voitures, des clients et de centaines de locations.", missionLabel: "Notre mission", missionText: "Rendre la location automobile plus honnête, simple et humaine, avec des opérateurs locaux fiables, des conditions claires et des prix transparents.", since: "Ans dans l’automobile · depuis 2017", trips: "Trajets Turo depuis 2023", rating: "Note des clients", fleet: "Véhicules dans la flotte actuelle", allStar: "All-Star Host" },
 };
 
 const locations = ["Los Angeles, CA", "Orange County, CA", "Cancún, Mexico", "Playa del Carmen, Mexico", "Tulum, Mexico"];
@@ -132,7 +132,7 @@ export default function App() {
   const [location, setLocation] = useState(locations[0]);
   const [searchedLocation, setSearchedLocation] = useState(locations[0]);
   const t = translations[lang];
-  const m = managementCopy[lang];
+  const a = aboutCopy[lang];
 
   useEffect(() => {
     const saved = window.localStorage.getItem("car-bookings-language") as Lang | null;
@@ -157,7 +157,7 @@ export default function App() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Car Bookings">CAR BOOKINGS<span>.</span></a>
         <nav aria-label={t.ariaNav}>
-          <a href="#cars">{t.navCars}</a><a href="#owners">{m.navOwners}</a><a href="#how">{t.navHow}</a>
+          <a href="#cars">{t.navCars}</a><a href="#about">{a.navAbout}</a><a href="#how">{t.navHow}</a>
         </nav>
         <div className="header-actions">
           <label className="language-select">
@@ -166,7 +166,7 @@ export default function App() {
               {(Object.keys(languageNames) as Lang[]).map((code) => <option key={code} value={code}>{languageNames[code]}</option>)}
             </select>
           </label>
-          <a className="company-link" href="#owners">{m.ownerCta}</a>
+          <a className="company-link" href="mailto:partners@car-bookings.com?subject=List%20my%20rental%20company">{t.listCompany}</a>
         </div>
       </header>
 
@@ -187,12 +187,18 @@ export default function App() {
 
       <section className="listings section" id="cars">
         <div className="section-heading"><div><p className="eyebrow">{t.available}</p><h2>{t.carsIn} {searchedLocation}</h2></div><p>{t.dates}</p></div>
-        <div className="empty-state"><span>CAR BOOKINGS</span><h3>{m.searchTitle}</h3><p>{m.searchText}</p><a href="#owners">{m.navOwners}<b>→</b></a></div>
+        <div className="empty-state"><span>CAR BOOKINGS</span><h3>{a.searchTitle}</h3><p>{a.searchText}</p><a href="mailto:partners@car-bookings.com?subject=List%20my%20rental%20company">{t.listCompany}<b>→</b></a></div>
       </section>
 
-      <section className="owners section" id="owners">
-        <div className="owner-intro"><p className="eyebrow">{m.ownerEyebrow}</p><h2>{m.ownerTitle}</h2><p>{m.ownerText}</p></div>
-        <div className="owner-panel"><div><span>{m.areaLabel}</span><strong>{m.areaText}</strong></div><ul><li>{m.service1}</li><li>{m.service2}</li><li>{m.service3}</li></ul><a href="mailto:partners@car-bookings.com?subject=Car%20management%20in%20Los%20Angeles%20or%20Orange%20County">{m.ownerCta}<b>→</b></a></div>
+      <section className="about section" id="about">
+        <div className="about-story"><p className="eyebrow">{a.aboutEyebrow}</p><h2>{a.aboutTitle}</h2><p>{a.aboutText}</p></div>
+        <div className="stats-grid">
+          <div><strong>9</strong><span>{a.since}</span></div>
+          <div><strong>600+</strong><span>{a.trips}</span></div>
+          <div><strong>5.0</strong><span>{a.rating}</span></div>
+          <div><strong>10</strong><span>{a.fleet}</span></div>
+        </div>
+        <div className="mission"><div><span>{a.allStar}</span><strong>Konstantin Gavrilkoff</strong></div><div><span>{a.missionLabel}</span><p>{a.missionText}</p></div></div>
       </section>
 
       <section className="how section" id="how">
@@ -203,7 +209,7 @@ export default function App() {
 
       <footer>
         <a className="brand" href="#top">CAR BOOKINGS<span>.</span></a><p>{t.footerLine}</p>
-        <div><a href="#cars">{t.findCar}</a><a href="#owners">{m.navOwners}</a><a href="mailto:partners@car-bookings.com">Email</a><a href="https://wa.me/13236107634" target="_blank" rel="noreferrer">WhatsApp</a></div>
+        <div><a href="#cars">{t.findCar}</a><a href="#about">{a.navAbout}</a><a href="mailto:partners@car-bookings.com">Email</a><a href="https://wa.me/13236107634" target="_blank" rel="noreferrer">WhatsApp</a></div>
         <small>© 2026 Car Bookings. All rights reserved. Car Bookings is operated by Gavrilkoff LLC.</small>
       </footer>
 
