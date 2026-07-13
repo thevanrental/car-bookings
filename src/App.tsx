@@ -1,14 +1,13 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 
 type Lang = "en" | "es" | "ru" | "uk" | "fr";
-type Category = "all" | "economy" | "suv" | "family";
 
 const translations = {
   en: {
     navCars: "Cars", navCompanies: "Rental companies", navHow: "How it works", listCompany: "List your company",
     heroEyebrow: "Independent car rentals", heroLine1: "Local cars.", heroLine2: "Real prices.",
-    heroNote: "Compare verified local rental companies. The price you see is the price you pay.",
+    heroNote: "Choose a city and compare independent local rentals as new partners join the platform.",
     location: "Location", pickup: "Pick-up", dropoff: "Drop-off", findCar: "Find a car",
     benefit1: "No hidden counter fees", benefit2: "Local companies only", benefit3: "Final price shown upfront",
     available: "Available now", carsIn: "Cars in", shown: "cars shown", dates: "Jul 18–22",
@@ -29,7 +28,7 @@ const translations = {
   es: {
     navCars: "Autos", navCompanies: "Empresas de alquiler", navHow: "Cómo funciona", listCompany: "Publica tu empresa",
     heroEyebrow: "Alquileres de autos independientes", heroLine1: "Autos locales.", heroLine2: "Precios reales.",
-    heroNote: "Compara empresas locales verificadas. El precio que ves es el precio que pagas.",
+    heroNote: "Elige una ciudad y compara alquileres locales independientes a medida que se suman nuevos socios.",
     location: "Ubicación", pickup: "Recogida", dropoff: "Devolución", findCar: "Buscar auto",
     benefit1: "Sin cargos ocultos", benefit2: "Solo empresas locales", benefit3: "Precio final por adelantado",
     available: "Disponibles ahora", carsIn: "Autos en", shown: "autos mostrados", dates: "18–22 jul",
@@ -50,7 +49,7 @@ const translations = {
   ru: {
     navCars: "Автомобили", navCompanies: "Прокатные компании", navHow: "Как это работает", listCompany: "Добавить компанию",
     heroEyebrow: "Независимые прокаты автомобилей", heroLine1: "Местные машины.", heroLine2: "Реальные цены.",
-    heroNote: "Сравнивайте проверенные местные прокаты. Цена на экране — это цена, которую вы платите.",
+    heroNote: "Выберите город и сравнивайте независимые местные прокаты по мере подключения новых партнёров.",
     location: "Место", pickup: "Получение", dropoff: "Возврат", findCar: "Найти машину",
     benefit1: "Без скрытых сборов", benefit2: "Только местные компании", benefit3: "Итоговая цена сразу",
     available: "Доступно сейчас", carsIn: "Автомобили в", shown: "машин показано", dates: "18–22 июля",
@@ -71,7 +70,7 @@ const translations = {
   uk: {
     navCars: "Автомобілі", navCompanies: "Прокатні компанії", navHow: "Як це працює", listCompany: "Додати компанію",
     heroEyebrow: "Незалежні прокати автомобілів", heroLine1: "Місцеві авто.", heroLine2: "Реальні ціни.",
-    heroNote: "Порівнюйте перевірені місцеві прокати. Ціна на екрані — це ціна, яку ви сплачуєте.",
+    heroNote: "Оберіть місто та порівнюйте незалежні місцеві прокати в міру підключення нових партнерів.",
     location: "Місце", pickup: "Отримання", dropoff: "Повернення", findCar: "Знайти авто",
     benefit1: "Без прихованих зборів", benefit2: "Лише місцеві компанії", benefit3: "Кінцева ціна одразу",
     available: "Доступно зараз", carsIn: "Автомобілі в", shown: "авто показано", dates: "18–22 липня",
@@ -92,7 +91,7 @@ const translations = {
   fr: {
     navCars: "Voitures", navCompanies: "Agences de location", navHow: "Comment ça marche", listCompany: "Ajouter votre agence",
     heroEyebrow: "Locations de voitures indépendantes", heroLine1: "Voitures locales.", heroLine2: "Prix réels.",
-    heroNote: "Comparez des agences locales vérifiées. Le prix affiché est le prix payé.",
+    heroNote: "Choisissez une ville et comparez les locations locales indépendantes à mesure que de nouveaux partenaires nous rejoignent.",
     location: "Lieu", pickup: "Prise en charge", dropoff: "Retour", findCar: "Trouver une voiture",
     benefit1: "Aucun frais caché", benefit2: "Agences locales uniquement", benefit3: "Prix final affiché dès le départ",
     available: "Disponibles maintenant", carsIn: "Voitures à", shown: "voitures affichées", dates: "18–22 juil.",
@@ -112,29 +111,28 @@ const translations = {
   },
 } as const;
 
-const cars = [
-  { name: "Chevrolet Aveo", category: "economy" as Category, company: "Maya Drive", location: "Cancún Downtown", seats: 5, total: 116, daily: 29, deposit: 150, image: "/cars/economy.jpg" },
-  { name: "Nissan Kicks", category: "suv" as Category, company: "Costa Car Rental", location: "Cancún Airport", seats: 5, total: 168, daily: 42, deposit: 200, image: "/cars/suv-city.jpg" },
-  { name: "Toyota Avanza", category: "family" as Category, company: "Local Wheels Cancún", location: "Hotel Zone", seats: 7, total: 220, daily: 55, deposit: 250, image: "/cars/family.jpg" },
-  { name: "Jeep Renegade", category: "suv" as Category, company: "Maya Drive", location: "Cancún Downtown", seats: 5, total: 236, daily: 59, deposit: 250, image: "/cars/suv-adventure.jpg" },
-];
 
-const companies = [
-  { name: "Maya Drive", area: "Cancún Downtown", cars: 14, rating: "4.9", rentals: "1,240", response: "8 min" },
-  { name: "Costa Car Rental", area: "Cancún Airport", cars: 9, rating: "4.8", rentals: "860", response: "12 min" },
-  { name: "Local Wheels Cancún", area: "Hotel Zone", cars: 21, rating: "4.9", rentals: "2,105", response: "6 min" },
-];
+const managementCopy: Record<Lang, {
+  navOwners: string; searchTitle: string; searchText: string; ownerEyebrow: string; ownerTitle: string;
+  ownerText: string; areaLabel: string; areaText: string; service1: string; service2: string; service3: string; ownerCta: string;
+}> = {
+  en: { navOwners: "For car owners", searchTitle: "Local cars are coming soon.", searchText: "We are onboarding independent cars and rental partners in this location.", ownerEyebrow: "Car management in Southern California", ownerTitle: "Have a car? Let us manage it.", ownerText: "We accept vehicles throughout Los Angeles and Orange County. We handle the listing, customer communication and day-to-day rental coordination.", areaLabel: "Service area", areaText: "Los Angeles · Orange County", service1: "Listing and customer inquiries", service2: "Booking coordination", service3: "Transparent owner communication", ownerCta: "Offer your car" },
+  es: { navOwners: "Para propietarios", searchTitle: "Próximamente: autos locales.", searchText: "Estamos incorporando autos y socios de alquiler independientes en esta ubicación.", ownerEyebrow: "Gestión de autos en el sur de California", ownerTitle: "¿Tienes un auto? Nosotros lo gestionamos.", ownerText: "Aceptamos vehículos en Los Ángeles y Orange County. Gestionamos la publicación, la comunicación con clientes y la coordinación diaria del alquiler.", areaLabel: "Área de servicio", areaText: "Los Ángeles · Orange County", service1: "Publicación y consultas", service2: "Coordinación de reservas", service3: "Comunicación transparente", ownerCta: "Ofrecer mi auto" },
+  ru: { navOwners: "Владельцам авто", searchTitle: "Местные автомобили скоро появятся.", searchText: "Мы подключаем частные автомобили и независимые прокаты в этом городе.", ownerEyebrow: "Управление автомобилями в Южной Калифорнии", ownerTitle: "Есть автомобиль? Передайте его нам в управление.", ownerText: "Мы принимаем автомобили по всему Лос-Анджелесу и Orange County. Берём на себя размещение, общение с клиентами и ежедневную координацию аренды.", areaLabel: "Зона работы", areaText: "Лос-Анджелес · Orange County", service1: "Размещение и обращения клиентов", service2: "Координация бронирований", service3: "Прозрачная связь с владельцем", ownerCta: "Предложить автомобиль" },
+  uk: { navOwners: "Власникам авто", searchTitle: "Місцеві автомобілі скоро з’являться.", searchText: "Ми підключаємо приватні авто та незалежні прокати в цьому місті.", ownerEyebrow: "Управління автомобілями в Південній Каліфорнії", ownerTitle: "Є автомобіль? Передайте його нам в управління.", ownerText: "Ми приймаємо автомобілі по всьому Лос-Анджелесу й Orange County. Беремо на себе розміщення, спілкування з клієнтами та координацію оренди.", areaLabel: "Зона роботи", areaText: "Лос-Анджелес · Orange County", service1: "Розміщення та звернення клієнтів", service2: "Координація бронювань", service3: "Прозорий зв’язок із власником", ownerCta: "Запропонувати автомобіль" },
+  fr: { navOwners: "Pour les propriétaires", searchTitle: "Les voitures locales arrivent bientôt.", searchText: "Nous intégrons des voitures et partenaires de location indépendants dans cette ville.", ownerEyebrow: "Gestion automobile en Californie du Sud", ownerTitle: "Vous avez une voiture ? Confiez-nous sa gestion.", ownerText: "Nous acceptons des véhicules dans tout Los Angeles et Orange County. Nous gérons l’annonce, les échanges clients et la coordination quotidienne des locations.", areaLabel: "Zone desservie", areaText: "Los Angeles · Orange County", service1: "Annonce et demandes clients", service2: "Coordination des réservations", service3: "Communication transparente", ownerCta: "Proposer ma voiture" },
+};
 
-const filterKeys: Category[] = ["all", "economy", "suv", "family"];
+const locations = ["Los Angeles, CA", "Orange County, CA", "Cancún, Mexico", "Playa del Carmen, Mexico", "Tulum, Mexico"];
+
 const languageNames: Record<Lang, string> = { en: "EN", es: "ES", ru: "RU", uk: "UA", fr: "FR" };
 
 export default function App() {
   const [lang, setLang] = useState<Lang>("en");
-  const [category, setCategory] = useState<Category>("all");
-  const [location, setLocation] = useState("Cancún, Mexico");
-  const [searchedLocation, setSearchedLocation] = useState("Cancún, Mexico");
-  const [selectedCar, setSelectedCar] = useState<(typeof cars)[number] | null>(null);
+  const [location, setLocation] = useState(locations[0]);
+  const [searchedLocation, setSearchedLocation] = useState(locations[0]);
   const t = translations[lang];
+  const m = managementCopy[lang];
 
   useEffect(() => {
     const saved = window.localStorage.getItem("car-bookings-language") as Lang | null;
@@ -146,22 +144,11 @@ export default function App() {
     window.localStorage.setItem("car-bookings-language", lang);
   }, [lang]);
 
-  useEffect(() => {
-    if (!selectedCar) return;
-    const close = (event: KeyboardEvent) => event.key === "Escape" && setSelectedCar(null);
-    document.body.classList.add("modal-open");
-    window.addEventListener("keydown", close);
-    return () => { document.body.classList.remove("modal-open"); window.removeEventListener("keydown", close); };
-  }, [selectedCar]);
 
-  const filteredCars = useMemo(
-    () => cars.filter((car) => category === "all" || car.category === category),
-    [category],
-  );
 
   function submitSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSearchedLocation(location.trim() || "Cancún, Mexico");
+    setSearchedLocation(location);
     document.querySelector("#cars")?.scrollIntoView({ behavior: "smooth" });
   }
 
@@ -170,7 +157,7 @@ export default function App() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Car Bookings">CAR BOOKINGS<span>.</span></a>
         <nav aria-label={t.ariaNav}>
-          <a href="#cars">{t.navCars}</a><a href="#companies">{t.navCompanies}</a><a href="#how">{t.navHow}</a>
+          <a href="#cars">{t.navCars}</a><a href="#owners">{m.navOwners}</a><a href="#how">{t.navHow}</a>
         </nav>
         <div className="header-actions">
           <label className="language-select">
@@ -179,7 +166,7 @@ export default function App() {
               {(Object.keys(languageNames) as Lang[]).map((code) => <option key={code} value={code}>{languageNames[code]}</option>)}
             </select>
           </label>
-          <a className="company-link" href="#list-company">{t.listCompany}</a>
+          <a className="company-link" href="#owners">{m.ownerCta}</a>
         </div>
       </header>
 
@@ -190,7 +177,7 @@ export default function App() {
           <p className="hero-note">{t.heroNote}</p>
         </div>
         <form className="search-panel" onSubmit={submitSearch}>
-          <label><span>{t.location}</span><input name="location" value={location} onChange={(event) => setLocation(event.target.value)} aria-label={t.location} /></label>
+          <label><span>{t.location}</span><select name="location" value={location} onChange={(event) => setLocation(event.target.value)} aria-label={t.location}>{locations.map((place) => <option key={place} value={place}>{place}</option>)}</select></label>
           <label><span>{t.pickup}</span><input name="pickup" type="date" defaultValue="2026-07-18" aria-label={t.pickup} /></label>
           <label><span>{t.dropoff}</span><input name="dropoff" type="date" defaultValue="2026-07-22" aria-label={t.dropoff} /></label>
           <button type="submit">{t.findCar}</button>
@@ -199,38 +186,13 @@ export default function App() {
       </section>
 
       <section className="listings section" id="cars">
-        <div className="section-heading"><div><p className="eyebrow">{t.available}</p><h2>{t.carsIn} {searchedLocation}</h2></div><p>{filteredCars.length} {t.shown} · {t.dates}</p></div>
-        <div className="filters" aria-label={t.ariaFilters}>
-          {filterKeys.map((filter) => <button className={category === filter ? "active" : ""} key={filter} type="button" onClick={() => setCategory(filter)} aria-pressed={category === filter}>{t.filters[filter]}</button>)}
-        </div>
-        <p className="demo-notice"><span>DEMO</span>{t.demoNotice}</p>
-        <div className="car-list">
-          {filteredCars.map((car) => (
-            <article className="car-row" key={car.name}>
-              <div className="car-photo"><img src={car.image} alt="" loading="lazy" /><span>{t.representative}</span></div>
-              <div className="car-name"><p>{t.filters[car.category]}</p><h3>{car.name}</h3><span>{car.seats} {t.seats} · {t.automatic}</span></div>
-              <div className="car-company"><span>{t.rentalCompany}</span><a href="#companies">{car.company}</a><small>{car.location}</small></div>
-              <div className="car-deposit"><span>{t.deposit}</span><strong>${car.deposit}</strong></div>
-              <div className="car-price"><span>${car.daily}{t.perDay}</span><strong>${car.total} {t.total}</strong></div>
-              <button className="view-button" type="button" onClick={() => setSelectedCar(car)} aria-label={`${t.view} ${car.name}`}>{t.view}</button>
-            </article>
-          ))}
-        </div>
-        <p className="price-note">{t.priceNote}</p>
+        <div className="section-heading"><div><p className="eyebrow">{t.available}</p><h2>{t.carsIn} {searchedLocation}</h2></div><p>{t.dates}</p></div>
+        <div className="empty-state"><span>CAR BOOKINGS</span><h3>{m.searchTitle}</h3><p>{m.searchText}</p><a href="#owners">{m.navOwners}<b>→</b></a></div>
       </section>
 
-      <section className="companies section" id="companies">
-        <div className="section-heading"><div><p className="eyebrow">{t.knowWho}</p><h2>{t.localCompanies}</h2></div><p>{t.verifiedDetails}</p></div>
-        <div className="company-grid">
-          {companies.map((company, index) => (
-            <article className="company-card" key={company.name}>
-              <div className="company-number">0{index + 1}</div>
-              <div><p className="verified">{t.verified}</p><h3>{company.name}</h3><p className="company-area">{company.area}</p></div>
-              <dl><div><dt>{t.rating}</dt><dd>{company.rating}</dd></div><div><dt>{t.completed}</dt><dd>{company.rentals}</dd></div><div><dt>{t.reply}</dt><dd>{company.response}</dd></div><div><dt>{t.availableCars}</dt><dd>{company.cars}</dd></div></dl>
-              <a href="#cars">{t.profile} <span>→</span></a>
-            </article>
-          ))}
-        </div>
+      <section className="owners section" id="owners">
+        <div className="owner-intro"><p className="eyebrow">{m.ownerEyebrow}</p><h2>{m.ownerTitle}</h2><p>{m.ownerText}</p></div>
+        <div className="owner-panel"><div><span>{m.areaLabel}</span><strong>{m.areaText}</strong></div><ul><li>{m.service1}</li><li>{m.service2}</li><li>{m.service3}</li></ul><a href="mailto:partners@car-bookings.com?subject=Car%20management%20in%20Los%20Angeles%20or%20Orange%20County">{m.ownerCta}<b>→</b></a></div>
       </section>
 
       <section className="how section" id="how">
@@ -238,31 +200,13 @@ export default function App() {
         <ol><li><h3>{t.step1}</h3><p>{t.step1Text}</p></li><li><h3>{t.step2}</h3><p>{t.step2Text}</p></li><li><h3>{t.step3}</h3><p>{t.step3Text}</p></li></ol>
       </section>
 
-      <section className="list-company section" id="list-company">
-        <p className="eyebrow">{t.forBusiness}</p><div><h2>{t.businessTitle}</h2><a href="mailto:partners@car-bookings.com?subject=List%20my%20rental%20company">{t.listCompany}</a></div>
-      </section>
 
       <footer>
         <a className="brand" href="#top">CAR BOOKINGS<span>.</span></a><p>{t.footerLine}</p>
-        <div><a href="#cars">{t.findCar}</a><a href="#list-company">{t.forCompanies}</a><a href="mailto:partners@car-bookings.com">Email</a><a href="https://wa.me/13236107634" target="_blank" rel="noreferrer">WhatsApp</a></div>
+        <div><a href="#cars">{t.findCar}</a><a href="#owners">{m.navOwners}</a><a href="mailto:partners@car-bookings.com">Email</a><a href="https://wa.me/13236107634" target="_blank" rel="noreferrer">WhatsApp</a></div>
         <small>© 2026 Car Bookings. All rights reserved. Car Bookings is operated by Gavrilkoff LLC.</small>
       </footer>
 
-      {selectedCar && (
-        <div className="modal-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setSelectedCar(null)}>
-          <section className="car-modal" role="dialog" aria-modal="true" aria-labelledby="car-modal-title">
-            <button className="modal-close" type="button" onClick={() => setSelectedCar(null)} aria-label={t.close}>×</button>
-            <div className="modal-photo"><img src={selectedCar.image} alt="" /><span>{t.representative} · {t.demo}</span></div>
-            <div className="modal-content">
-              <p className="eyebrow">{t.filters[selectedCar.category]}</p><h2 id="car-modal-title">{selectedCar.name}</h2>
-              <p className="modal-company">{selectedCar.company} · {selectedCar.location}</p>
-              <div className="modal-specs"><span>{selectedCar.seats} {t.seats}</span><span>{t.automatic}</span><span>{t.deposit}: ${selectedCar.deposit}</span></div>
-              <div className="modal-total"><span>${selectedCar.daily}{t.perDay}</span><strong>${selectedCar.total} {t.total}</strong></div>
-              <a className="request-button" href={`mailto:partners@car-bookings.com?subject=${encodeURIComponent(`Car request: ${selectedCar.name}`)}`}>{t.request}<span>→</span></a>
-            </div>
-          </section>
-        </div>
-      )}
     </main>
   );
 }
