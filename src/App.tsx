@@ -171,10 +171,13 @@ export default function App() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow">{t.heroEyebrow}</p>
-          <h1>{t.heroLine1}<br />{t.heroLine2}</h1>
-          <p className="hero-note">{t.heroNote}</p>
+        <div className="hero-layout">
+          <div className="hero-copy">
+            <p className="eyebrow">{t.heroEyebrow}</p>
+            <h1>{t.heroLine1}<br /><span>{t.heroLine2}</span></h1>
+            <p className="hero-note">{t.heroNote}</p>
+          </div>
+          <figure className="hero-visual"><img src="/cars/family.jpg" alt="" /></figure>
         </div>
         <form className="search-panel" onSubmit={submitSearch}>
           <label><span>{t.location}</span><select name="location" value={location} onChange={(event) => setLocation(event.target.value)} aria-label={t.location}>{locations.map((place) => <option key={place} value={place}>{place}</option>)}</select></label>
