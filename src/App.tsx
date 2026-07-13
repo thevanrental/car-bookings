@@ -196,7 +196,6 @@ export default function App() {
           <div><strong>9</strong><span>{a.since}</span></div>
           <div><strong>600+</strong><span>{a.trips}</span></div>
           <div><strong>5.0</strong><span>{a.rating}</span></div>
-          <div><strong>10</strong><span>{a.fleet}</span></div>
         </div>
         <div className="mission"><div><span>{a.allStar}</span><strong>Konstantin Gavrilkoff</strong></div><div><span>{a.missionLabel}</span><p>{a.missionText}</p></div></div>
       </section>
